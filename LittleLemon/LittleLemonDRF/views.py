@@ -21,3 +21,8 @@ from rest_framework.permissions import IsAuthenticated
 @permission_classes([IsAuthenticated])
 def secret(request):
     return Response({"message":"Some secret message"})
+
+@api_view()
+@permission_classes
+def ManagerView(request):
+    return Response({"Only the manager should see this!"})
