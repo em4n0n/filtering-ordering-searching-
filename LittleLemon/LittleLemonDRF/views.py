@@ -24,5 +24,5 @@ def secret(request):
 
 @api_view()
 @permission_classes
-def ManagerView(request):
+def manager_view(request):
     return Response({"Only the manager should see this!"})
