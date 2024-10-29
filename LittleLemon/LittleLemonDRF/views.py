@@ -28,4 +28,4 @@ def manager_view(request):
     if request.user.groups.filter(name='Manager').exists():
         return Response({"message":"Only the manager should see this!"})
     else:
-        return Response({"message": "You are not authorized"})
+        return Response({"message": "You are not authorized"}, 403)
