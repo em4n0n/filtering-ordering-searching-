@@ -32,7 +32,7 @@ def manager_view(request):
     else:
         return Response({"message": "You are not authorized"}, 403)
     
-@api_view
+@api_view()
 @throttle_classes([AnonRateThrottle])
 def throttle_check(request):
     return Response({"message":"successful"})
