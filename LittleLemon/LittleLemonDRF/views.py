@@ -3,8 +3,10 @@
 # from .serializers import MenuItemSerializer, CategorySerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.decorators import permission_classes
+from rest_framework.decorators import permission_classes, throttle_classes
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.throttling import AnonRateThrottle
+
 
 # class CategoryView(generics.ListCreateAPIView):
 #     queryset = Category.objects.all()
@@ -30,6 +32,6 @@ def manager_view(request):
     else:
         return Response({"message": "You are not authorized"}, 403)
     
-@api_view()
+@api_view
 def throttle_check(request):
     return Response({"message":"successful"})
