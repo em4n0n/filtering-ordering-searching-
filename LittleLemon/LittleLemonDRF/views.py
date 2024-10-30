@@ -41,5 +41,5 @@ def throttle_check(request):
 @api_view()
 @permission_classes([IsAuthenticated])
 @throttle_classes([UserRateThrottle])
-def throtte_check(request):
+def throttle_check_auth(request):
     return Response({"message":"message for the logged in users only"})
