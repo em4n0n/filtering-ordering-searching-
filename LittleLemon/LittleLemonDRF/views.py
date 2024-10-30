@@ -29,3 +29,7 @@ def manager_view(request):
         return Response({"message":"Only the manager should see this!"})
     else:
         return Response({"message": "You are not authorized"}, 403)
+    
+@api_view()
+def throttle_check(request):
+    return Response({"message":"successful"})
